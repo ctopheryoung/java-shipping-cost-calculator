@@ -22,7 +22,7 @@ public class Parcel {
     return mBasicShippingCost;
   }
 
-  // public double speedModifier(int shipSpeed) {
-  //   return getBasicShippingCost() * shipSpeed;
-  // }
+  public double speedModifier(double shipSpeed) {
+    return getBasicShippingCost() * shipSpeed;
+  }
 }
