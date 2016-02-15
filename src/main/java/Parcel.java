@@ -1,17 +1,28 @@
 public class Parcel {
-  private int mWidth;
-  private int mHeight;
-  private int mDepth;
+  private double mWidth;
+  private double mHeight;
+  private double mDepth;
   private double mWeight;
+  private double mVolume;
+  private double mBasicShippingCost;
 
-  public Parcel(int width, int height, int depth, double weight) {
+  public Parcel(double width, double height, double depth, double weight) {
     mWidth = width;
     mHeight = height;
     mDepth = depth;
     mWeight = weight;
   }
 
-  public int getVolume() {
-    return mWidth * mHeight * mDepth;
+  public double getVolume() {
+    return mVolume = mWidth * mHeight * mDepth;
   }
+
+  public double getBasicShippingCost() {
+    mBasicShippingCost = getVolume() * mWeight / 10.0;
+    return mBasicShippingCost;
+  }
+
+  // public double speedModifier(int shipSpeed) {
+  //   return getBasicShippingCost() * shipSpeed;
+  // }
 }

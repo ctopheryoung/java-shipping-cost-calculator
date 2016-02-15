@@ -5,13 +5,19 @@ public class ParcelTest {
 
   @Test
   public void newParcel_instantiatesCorrectly() {
-    Parcel testParcel = new Parcel(2, 2, 2, 3.12);
+    Parcel testParcel = new Parcel(2.0, 2.0, 2.0, 3.12);
     assertEquals(true, testParcel instanceof Parcel);
   }
 
   @Test
   public void getVolume_addsDimensions() {
-    Parcel testParcel = new Parcel(2, 3, 4, 5);
-    assertEquals(24, testParcel.getVolume());
+    Parcel testParcel = new Parcel(2.0, 3.0, 4.0, 5.0);
+    assertEquals(24.0, testParcel.getVolume(), 0);
+  }
+
+  @Test
+  public void getBasicShippingCost() {
+    Parcel testParcel = new Parcel(2.0, 3.0, 4.0, 5.0);
+    assertEquals(12.0, testParcel.getBasicShippingCost(), 0);
   }
 }
