@@ -19,6 +19,8 @@ public class Parcel {
 
   public double getBasicShippingCost() {
     mBasicShippingCost = getVolume() * mWeight / 10.0;
+    mBasicShippingCost = Math.round(mBasicShippingCost * 100);
+    mBasicShippingCost = mBasicShippingCost / 100;
     return mBasicShippingCost;
   }
 
